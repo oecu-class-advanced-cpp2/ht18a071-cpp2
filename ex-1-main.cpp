@@ -28,85 +28,66 @@ namespace cpp2 {
     public:
         
         
-        mcxi(const std::string& s) : value_(0) {
+        mcxi(const std::string s) {
             
-            int num = 0;
+           result = 0;
+           
+           char_toInt = 1;
             
-            for (auto pos = a.begin(); pos != s.end(); ++pos){
-                if (*pos == '2' || *pos == '3' || *pos == '4' || pos == '5' || *pos == '6' || *pos == '7' || *pos == '8' || *pos == '9'){
+            for (int i = 0; i[pos]; i++){
+            
+                if(i[pos] == 'm'){
+                
+                result += 1000 * char_toInt;
+                
+                char_toInt = 1;
+                }
+                
+                else if (i[pos] == 'c'){
+                
+                   result += 100 * char_toInt;
+                   
+                   char_toInt = 1;
+                
+                }
+                
+                else if (i[pos] == 'x') {
+                
+                    result += 10 * char_toInt;
                     
-             switch(*pos){
-                 case '2' : num = 2; break;
-                     
-                 case '3' : num = 3; break;
-                     
-                 case '4' : num = 4; break;
-                     
-                 case '5' : num = 5; break;
-                     
-                 case '6' : num = 6; break;
-                     
-                 case '7' : num = 7; break;
-                     
-                 case '8' : num = 8; break;
-                     
-                 case '9' : num = 9; break;
+                    char_toInt = 1;
+                
+                }
+                
+                else if (i[pos] == 'i') {
+                
+                    result += 1 * char_toInt;
+                    
+                    char_toInt = 1;
+                
+                }
+              
+                else if (i[pos] == '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9'){
+                    
+                    char_toInt = int(i[pos] - '0');
+                    
+                }
+             
              }
              
-                    
-            } else {
-                    switch ([*pos]){
-                        
-                    case '1000' : m = 1000; break;
-                    
-                    case '100' : c = 100; break;
-                    
-                    case '10' : x = 10; break;
-                    
-                    case '1' : i = 1; break
-                        
-                    }
-                    m -> 1000
-                    c -> 100
-                    x -> 10
-                    i -> 1
-               
-                        
-        }
-
-
+         cout << "入力"　<< i << "変換後": << result << endl; {
+            
         std::sering to_string(){
             
             return "a";
             
         }
-                
-                
-                
+                 
         mcxi operator+(const mcxi& rhs) {
             return rhs;
         }
-
-        /* ----------------------------------------------------------------- */
-        /*
-           to_string
-
-           現在の値を mcxi 記法に変換します。
-         */
-        /* ----------------------------------------------------------------- */
-        std::string to_string() const {
-            return "XXX";
-        }
-        
-        void debug_mcxi() {
-            std::cout << "value_:" << value_ << std::endl;
-        }
-
-    private:
-        int value_;
-    };
-}
-
+     }:
+     
 int main(){
   cpp2::mcxi a0("xi");
   cpp2::mcxi b0("x9i");
