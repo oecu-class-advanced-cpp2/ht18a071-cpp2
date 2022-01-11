@@ -106,6 +106,35 @@ int main(){
   
  // return l;
   
+  
+
+std::stringstream ss;
+
+int value = 2200;
+int q = value_/1000;
+if(q == 1){
+ss << ‘m’;
+}
+
+I
+if(q > 1){
+ss << q;
+ss << ‘m’;
+
+}
+
+int p = value_/100;
+if(p == 1){
+ss << ‘c’;
+
+std::cout<< “value_:” << ss.str() << std::end;
+
+
+return 0;
+}
+
+  
+  
   /*
   cpp2::mcxi a1("i");
   cpp2::mcxi b1("9i");
